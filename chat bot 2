@@ -1,0 +1,34 @@
+{"intents":  [
+    {"tag":  "greatings",
+    "patterns": ["hello", "hey", "hi", "good day", "Greetings", "what's up?", "how is it going?"],
+    "responses": ["Hello!", "Hey!", "What can I do for you?"]
+    },
+    {"tag":  "goodbye",
+    "patterns":  ["cya", "see you later", "goodbye", "i am leaving", "have a good day", "bye", "cao", "see ya"],
+    "responses":  ["sad to see you go :(", "talk to you later", "goodbye!"]
+    },
+    {"tag":  "age",
+    "patterns":  ["how old", "how old is florian", "what is your age", "how old are you", "age?"],
+    "responses":  ["my owner florian", "what is your"]
+    },
+    {"tag":  "name",
+    "patterns":  [],
+    "responses":  []
+    },
+    {"tag":  "shop",
+    "patterns":  [],
+    "responses":  []
+    },
+    {"tag":  "hours",
+    "patterns":  [],
+    "responses":  []
+    },
+    {"tag":  "stocks",
+    "patterns":  [],
+    "responses":  []
+    },
+    {"tag":   "",
+    "patterns":  [],
+    "responses":  []
+    }
+]}
