@@ -1,19 +1,30 @@
-lovely_loveseat_description = 'Lovely Loveseat. Tufted polyester blend on wood. 32 inches high x 40 inches wide x 30 inches deep. Red or white.'
-lovely_loveseat_price = 254.00
-stylish_settee_description = 'Stylish Settee. Faux leather on birch. 29.50 inches high x 54.75 inches wide x 28 inches deep. Black.'
-stylish_settee_price = 180.50
-luxurious_lamp_description = 'Luxurious Lamp. Glass and iron. 36 inches tall. Brown with cream shade.'
-luxurious_lamp_price = 52.15
-sales_tax = .088
-customer_one_total = 0
-customer_one_itemization = ""
-customer_one_total += lovely_loveseat_price
-customer_one_itemization += luxurious_lamp_description
-customer_one_total += luxurious_lamp_price
-customer_one_itemization += lovely_loveseat_description
-customer_one_tax = customer_one_total +sales_tax
-customer_one_total += customer_one_tax
-print ("Customer One Items:")
-print (customer_one_itemization)
-print ("Customer One Total:")
-print (customer_one_total)
+from tkinter import*
+from tkinter import ttk
+root = Tk()
+frm = ttk.Frame(root, padding=10)
+frm.grid()
+
+def sendASMS():
+  from textmagic.rest import TextmagicRestClient
+  mescontent = "Stay Calm Help is On the Way"
+  username = "nikolauskeil"
+  token = "VbFSW16jtejBwK5TgabVa6uUvXNCZa"
+  client = TextmagicRestClient(username, token)
+  message = client.messages.create(phones="13306146590", text=mescontent)
+
+
+def sendSMS():
+  from textmagic.rest import TextmagicRestClient
+  mescontent = "Stay Calm Help is On the Way"
+  username = "nikolauskeil"
+  token = "VbFSW16jtejBwK5TgabVa6uUvXNCZa"
+  client = TextmagicRestClient(username, token)
+  message = client.messages.create(phones="13305060403", text=mescontent)
+
+
+ttk.Label(frm, text="ZOMBIES! HELP!").grid(column=0, row=1)
+ttk.Button(frm, text="Send Request for Nikolaus", command=sendSMS).grid(column=0, row=2)
+ttk.Button(frm, text="Send Request for Aaron", command=sendASMS).grid(column=0, row=3)
+ttk.Button(frm, text="Cancel", command=root.destroy).grid(column=0, row=4)
+
+root.mainloop()
